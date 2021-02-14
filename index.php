@@ -23,8 +23,8 @@ $statement = $db->prepare($query);
 $statement->execute();
 $categories = $statement->fetchAll();
 $statement->closeCursor();
-?>
 
+?>
 
 <!DOCTYPE html>
 <html>
@@ -36,29 +36,36 @@ $statement->closeCursor();
 
 <body>
 <main>
-    <h1>My Items</h1>
-    <section>
-        <h2><?php echo $title; ?></h2>
-        <table>
-            <tr>
-                <th>Title</th>
-                <th>Description</th>
-            </tr>
-            
-            <?php foreach ($items as $item) : ?>
-            <tr>
-                <td><?php echo $item['Title']; ?></td>
-                <td><?php echo $item['Description']; ?></td>
-                <td><form action="delete_item.php" method="post">
-                    <input type="hidden" name="item_num"
-                           value="<?php echo $item['ItemNum']; ?>">
-                    <input type="submit" value="Delete">
-                </form></td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <p><a href="add_item_form.php">Add Item</a></p>       
-    </section>
-</main>
+    <h1>My ToDo Items</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>&nbsp;</th>
+        </tr>
+
+        <tr>
+        <?php foreach ($items as $item) : ?>
+            <td><?php echo $item['Title']; ?></td>
+            <td><form action="delete_item.php" method="post">
+                <input type="hidden" name="item_num"
+                    value="<?php echo $item['ItemNum']; ?>">
+                <input type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+
+    <h2>Add Item</h2>
+    
+    <!-- add product form -->
+    <form action="add_item.php" method="post"
+            id="add_item_form">
+        <input type="text" name="name" maxlenth="20" placeholder="Title">
+        <input type="text" name="name" maxlenth="50" placeholder="Description">
+        <input id="add_item_button" type="submit" value="Add Item">
+    </form>
+
+    </main>
 </body>
 </html>
