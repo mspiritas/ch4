@@ -8,17 +8,17 @@ if (!isset($item_num)) {
     }
 }
 
-$queryitems = 'SELECT * FROM todoitems
+$query = 'SELECT * FROM todoitems
           WHERE ItemNum = :item_num';
 $statement = $db->prepare($query);
 $statement->bindValue(':item_num', $item_num);
 $statement->execute();
-$item = $statement->fetch();
-$title = $item['Title'];
+$items = $statement->fetch();
+$title = $items['Title'];
 $statement->closeCursor();
 
 $query = 'SELECT * FROM todoitems
-          ORDER BY ItemNum';
+          ORDER BY ItemNum DESC';
 $statement = $db->prepare($query);
 $statement->execute();
 $categories = $statement->fetchAll();
