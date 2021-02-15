@@ -12,4 +12,8 @@ if ($item_num != false && $item_num != false) {
     $statement->closeCursor();    
 }
 
+if (empty($item_num)) {
+    echo "Nothing to do";
+}
+
 include('index.php');

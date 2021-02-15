@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Courier New', Arial, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+#item_list {
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid dodgerblue;
+    width: 80vw;
+} 
+
+#add_input {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5em;
+    border: 3px solid #FFAE42;
+    width: 80vw;
+}  
+
+#list_heading, #item_heading {
+    background-color: dodgerblue;
+    color: #FFF;
+    font-weight: bold;
+}
+
+#item_heading {
+    background-color: #FFAE42;
+}
+
+h2 {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+.add_item_title {
+    background-color: #FFAE42;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    width: 80vw;
+    text-align: center;
+}
+
+#title, #desc {
+    width: 100%;
+    padding: 0.25em;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    font-family: 'Courier New', Arial, sans-serif;
+}
+
+#title2 {
+    font-weight: bold;
+    padding-top: 0.5em;
+    padding-left: 0.6em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#desc2 {
+    color: dodgerblue;
+    border-bottom: 1px solid dodgerblue;
+    padding-left: 0.5em;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+#delete_item_button, #add_item_button {
+    background-color:lightsalmon;
+    float: right;
+    margin-top: 0.5em;
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    font-size: 16px;
+    font-family: 'Courier New', Arial, sans-serif;
+    font-weight: bold;
+}
+
+#delete_column {
+    border-bottom: 1px solid dodgerblue;
+}
+
+#add_item_button {
+    background-color: #FFAE42;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+}
+
+#nothing_to_do {
+    padding-top: 1.5em;
+    text-align: center;
+    font-weight: bold;
+}

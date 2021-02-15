@@ -4,14 +4,9 @@ $item_num = filter_input(INPUT_POST, 'item_num', FILTER_VALIDATE_INT);
 $title = filter_input(INPUT_POST, 'title');
 $description = filter_input(INPUT_POST, 'description');
 
-if ($item_num == null || $item_num == false ||
-    $title == null || $description == null) {
-    $error = "Please enter valid ToDo items.";
-    include('error.php');
-} else {
-    require_once('database.php');
 
-    // Add the product to the database  
+require_once('database.php');
+
     $query = 'INSERT INTO todoitems
                  (ItemNum, Title, Description)
               VALUES
@@ -23,7 +18,6 @@ if ($item_num == null || $item_num == false ||
     $statement->execute();
     $statement->closeCursor();
 
-    // Display the Product List page
     include('index.php');
-}
+
 ?>
